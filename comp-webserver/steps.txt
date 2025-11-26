@@ -1,0 +1,9 @@
+1- intercept the upload request 
+2- specify the sniper attack from the intruder and specify the position as the file extension 
+3- you can use the list we provided orpaste those in the payload php3,php4,php5,phar,phtml
+4- you will find the phtml extension accepted now you can upload the file using it 
+5- before opening the file listen on the port you specified in your reverse shell using 'nc -nlvp <port>'
+6- open the file you uploaded from the web application you will find it on endpoint /internal/uplouds 
+7- the connection stabilished now run your commands 
+8- we identified directory named home so we moved to it and found bill directory 
+9- we guessed that is the username we found the flag in user.txt file in bill directory

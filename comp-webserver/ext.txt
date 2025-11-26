@@ -1,0 +1,7 @@
+php3
+php4
+php6
+php8
+phar
+phtml
+
